@@ -1,13 +1,9 @@
 import './App.css';
+import Checkout from './Checkout/Checkout';
 
 function App() {
   return (
-    <div>
-    Hiii
-    Hiii-3
-    Hiii-4
-    -axios installed
-    </div>
+    <Checkout />
   );
 }
 
