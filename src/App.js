@@ -1,12 +1,12 @@
 import './App.css';
+import Product from './ProductsPage/Products';
+// import Product from "./products";
 
 function App() {
   return (
     <div>
-    Hiii
-    Hiii-3
-    Hiii-4
-    -axios installed
+      <Product />
+    
     </div>
   );
 }
