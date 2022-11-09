@@ -1,4 +1,5 @@
 import './App.css';
+import Admin_Router from './components/admin/Admin_Home';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
     Hiii-3
     Hiii-4
     -axios installed
+    <Admin_Router/>
     </div>
   );
 }
