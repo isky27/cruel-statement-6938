@@ -6,6 +6,7 @@ function App() {
     Hiii
     Hiii-3
     Hiii-4
+    -axios installed
     </div>
   );
 }
