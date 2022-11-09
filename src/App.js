@@ -1,12 +1,14 @@
 import './App.css';
+import AllRoutes from './Components/AllRoutes';
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div>
-    Hiii
-    Hiii-3
-    Hiii-4
-    -axios installed
+   <Navbar/>
+   <AllRoutes/>
+   <Footer/>
     </div>
   );
 }
