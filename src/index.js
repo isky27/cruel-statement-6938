@@ -4,17 +4,17 @@ import './index.css';
 import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import CartContextProvider from './Checkout/CartContextProvider';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ChakraProvider>
+   <BrowserRouter>
+      <ChakraProvider>
         <CartContextProvider>
             <App />
         </CartContextProvider>
-
-
-
     </ChakraProvider>
+   </BrowserRouter>
 
 );
 
