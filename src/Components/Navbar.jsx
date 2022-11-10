@@ -1,24 +1,17 @@
 import { NavLink } from "react-router-dom";
-import {
-  Box,
-  Button,
-  Divider,
-  Spacer,
-  Stack,
-  Text,
-  Image
-} from "@chakra-ui/react";
-import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
+import { Box, Button, Stack, Text, Image } from "@chakra-ui/react";
+import { FaUserAlt } from "react-icons/fa";
+import { useAuth } from "../Context/Auth";
 const links = [
   { id: "1", title: "SKINCARE", path: "/skincare" },
   { id: "2", title: "HAIRCARE", path: "/haircare" },
   { id: "3", title: "BEST SELLER", path: "/best_seller" },
   { id: "4", title: "SPECIAL OFFERS", path: "/special_offer" },
   { id: "5", title: "ABOUT", path: "/about" },
-  {id:"6",title:"Admin",path:"/admin"}
 ];
 
-function Navbar() {
+const Navbar = () => {
+  const auth = useAuth();
   return (
     <div>
       <Stack
@@ -59,30 +52,35 @@ function Navbar() {
             spacing={6}
             margin="auto"
           >
-            <Button
-              as={"a"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"#"}
-              margin="auto"
-            >
-              Sign In &nbsp; <FaUserAlt />
-            </Button>
-            <Button
-              display={{ base: "none", md: "inline-flex" }}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={"pink.400"}
-              href={"#"}
-              margin="auto"
-              _hover={{
-                bg: "pink.300"
-              }}
-            >
-              Sign Up
-            </Button>
+            {!auth.user && (
+              <NavLink to="/login">
+                <Button
+                  as={"a"}
+                  fontSize={"sm"}
+                  fontWeight={400}
+                  variant={"link"}
+                  margin="auto"
+                >
+                  Login &nbsp; <FaUserAlt />
+                </Button>
+              </NavLink>
+            )}
+
+            <NavLink to="/signup">
+              <Button
+                display={{ base: "none", md: "inline-flex" }}
+                fontSize={"sm"}
+                fontWeight={600}
+                color={"white"}
+                bg={"pink.400"}
+                margin="auto"
+                _hover={{
+                  bg: "pink.300",
+                }}
+              >
+                Sign Up
+              </Button>
+            </NavLink>
           </Stack>
         </Box>
         <hr />
@@ -107,6 +105,6 @@ function Navbar() {
       </Stack>
     </div>
   );
-}
+};
 
 export default Navbar;

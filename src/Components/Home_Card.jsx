@@ -104,7 +104,7 @@ const HomeCard = () => {
             fontSize="md"
             fontWeight="semibold"
             lineHeight="tight"
-            isTruncated
+          
           >
             {el.title}
           </Heading>

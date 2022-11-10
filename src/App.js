@@ -1,16 +1,17 @@
-import "./App.css";
-import AllRoutes from "./components/AllRoutes";
-import Footer from "./components/user/Footer";
-import Navbar from "./components/user/Navbar";
+import AllRoutes from "./Components/AllRoutes";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import { AuthProvider } from "./Context/Auth";
+import "./styles.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <Navbar />
-      <AllRoutes />
-      <Footer />
+      <AuthProvider>
+        <Navbar />
+        <AllRoutes />
+        <Footer />
+      </AuthProvider>
     </div>
   );
 }
-
-export default App;
