@@ -10,14 +10,14 @@ import SingleProducts from './SingleProducts';
 
 import WeAccept from "./we.png"
 
-function Checkout() {
+function Cart() {
 
   const { cartdata, setcartdata } = useContext(CartContext)
 
   console.log(cartdata)
 
 
-  const [totalPrice, setTotalPrice] = useState(1)
+let [totalPrice, setTotalPrice] = useState(1)
 
   const [input, setInput] = useState("")
 
@@ -61,8 +61,8 @@ function Checkout() {
     } else if(input!=="masai30"){
       alert("Coupon Code Not Valid")
     } else if(input==="masai30"){
-       setTotalPrice(totalPrice/10)
-     alert(totalPrice)
+       setTotalPrice( totalPrice-=totalPrice/10)
+       alert(totalPrice)
        
     }
   }
@@ -199,4 +199,4 @@ function Checkout() {
   )
 }
 
-export default Checkout
+export default Cart

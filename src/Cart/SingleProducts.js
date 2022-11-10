@@ -7,7 +7,6 @@ function SingleProducts() {
 
     const {AddtoCart}=useContext(CartContext)
 
-    console.log(AddtoCart)
 
 
   return (

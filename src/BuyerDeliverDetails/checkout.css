@@ -1,14 +1,134 @@
-.logo{
+.logo {
     width: 100%;
     height: 70px;
     border-bottom: 2px solid black;
 }
-.logo>img{
+
+.logo>img {
     width: 25%;
     height: 65px;
     margin: auto;
 }
-.mainContainer{
+
+.mainContainer {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    gap: 70px;
+
+}
+
+.mainContainer>div:first-child {
+    width: 55%;
+    height: 50vh;
+    /* border: 2px solid yellow; */
+}
+
+
+.mainContainer>div:last-child {
+    width: 40%;
+
+    border: 1px solid grey;
+    border-radius: 5px;
+
+}
+
+.top {
+    display: flex;
+    background-color: rgb(236, 228, 228);
+    padding: 10px;
+
+}
+
+.top>h1:last-child {
+    margin-left: 70%;
+}
+
+.Contact {
+    font-size: 25px;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.where {
+    font-size: 20px;
+    padding: 20px;
+}
+
+.email {
+    font-size: 17px;
+    margin-left: 15px;
+    color: rgb(212, 206, 212);
+    font-weight: 500;
+    padding: 5px;
+}
+
+.input {
     width: 95%;
-    
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+.createOrGuset {
+    display: flex;
+}
+
+.guest {
+    outline: 0;
+    border: 0;
+    width: 47%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 1px solid black;
+    margin: 7px 7px 7px 0px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    margin-left: 10px;
+
+}
+
+.account {
+    outline: 0;
+    border: 0;
+    width: 47%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(61, 56, 56);
+
+    margin: 7px 7px 7px 0px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.shippingPayment {
+    margin-top: 50px;
+}
+
+.MainItemDiv {
+    display: flex;
+    width: 100%;
+    height: 18vh;
+    border: 1px solid black;
+}
+.MainItemDiv>div:first-child{
+    width: 30%;
+    /* border: 1px solid red; */
+    margin: 5px;
+}
+.MainItemDiv>div:first-child>img{
+    width: 90%;
+    height: 15vh;
+    /* border: 1px solid black; */
+}
+.MainItemDiv>div:nth-child(2){
+    width: 50%;
+    /* border: 1px solid black; */
 }

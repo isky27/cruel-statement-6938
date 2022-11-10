@@ -1,14 +1,15 @@
 import './App.css';
-import Checkout from './Checkout/cart';
+
 import {Routes,Route} from "react-router-dom"
 import CheckoutPage from './BuyerDeliverDetails/CheckoutPage';
+import Cart from './Cart/Cart';
 
 
 function App() {
   return (
   <>
   <Routes>
-    <Route path="/cart" element={  <Checkout />}></Route>
+    <Route path="/cart" element={  <Cart />}></Route>
     <Route path="/checkout" element={<CheckoutPage />}></Route>
   </Routes>
   
