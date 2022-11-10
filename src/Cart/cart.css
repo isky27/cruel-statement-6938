@@ -111,9 +111,7 @@
     margin-top: 15px;
 }
 
-/* .middleDiv>div{
-    display: flex;
-} */
+
 
 .DropDown{
     /* border: 1px solid blue; */
@@ -242,5 +240,5 @@
     margin: 5px 0px 6px 16px;
 }
 .btn-checkout{
-    margin-top: 17px;
+    margin-top: 39px;
 }
