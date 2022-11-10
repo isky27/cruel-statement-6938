@@ -1,0 +1,16 @@
+.sing{
+    width: 25%;
+    height: 20vh;
+    border:1px solid red;
+    margin-top: 75%;
+}
+
+.sing>div{
+    width: 100%;
+    height: 40vh;
+    border: 2px solid black;
+}
+.sing>div>img{
+    width: 100%;
+    height: 30vh;
+}

@@ -1,17 +1,82 @@
 // import { DeleteIcon } from '@chakra-ui/icons';
 import { Center, Text } from '@chakra-ui/react'
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { CartContext } from './CartContextProvider';
 import "./Checkout.css"
-import { DemoData } from "./DemoData";
+
+import IncDec from './IncDec';
+import SingleProducts from './SingleProducts';
+
 
 import WeAccept from "./we.png"
 
 function Checkout() {
-  // console.log(DemoData)
 
-  const deleteItem = () => {
-    alert("loo")
+  const { cartdata, setcartdata } = useContext(CartContext)
+
+  console.log(cartdata)
+
+
+  const [totalPrice, setTotalPrice] = useState(1)
+
+  const [input, setInput] = useState("")
+
+  const deleteItem = (id) => {
+    const UpdatedData = cartdata.filter((el) => el.id !== id)
+    setcartdata(UpdatedData)
   }
+
+
+
+  function quantityModify(id, howMuchIncDecInOneClick) {
+
+    const updatedData = cartdata.map((item) =>
+      item.id === id ? { ...item, quantity: item.quantity + howMuchIncDecInOneClick } : item
+    );
+    setcartdata(updatedData);
+    handlePrice();
+  }
+
+ 
+
+
+  const handlePrice = () => {
+    let ans = 0;
+    cartdata.map((item) => (ans += item.price * item.quantity));
+    setTotalPrice(ans);
+  };
+  useEffect(() => {
+    handlePrice();
+  });
+
+  console.log(totalPrice)
+
+  const handleChange = (e) => {
+    setInput(e.target.value)
+  }
+
+  const Couponhandle = (input) => {
+    if(totalPrice<50){
+      alert("Total Price Should Be More Than $50")
+    } else if(input!=="masai30"){
+      alert("Coupon Code Not Valid")
+    } else if(input==="masai30"){
+       setTotalPrice(totalPrice/10)
+     alert(totalPrice)
+       
+    }
+  }
+
+  const ContinueShopping = () => {
+    alert("Continue Shopping")
+  }
+
+
+
+  const SecurePayment = () => {
+    alert("Secure payment")
+  }
+
 
 
   return (
@@ -46,8 +111,8 @@ function Checkout() {
           <div className='ProductsDiv'>
 
             {
-              DemoData.map((item) => (
-                <div className='PerItemDiv'>
+              cartdata.map((item) => (
+                <div className='PerItemDiv' key={item.id}>
 
                   <div className='imgDiv'>
                     <img src={item.image} alt={item.title} />
@@ -57,9 +122,7 @@ function Checkout() {
                     <p>{item.title}</p>
 
                     <div className='IncDec'>
-                      <button>-</button>
-                      <p> 1 </p>
-                      <button>+</button>
+                      <IncDec quantityModify={quantityModify} id={item.id} />
                     </div>
 
                     <div className='DropDown'>
@@ -71,8 +134,8 @@ function Checkout() {
                   </div>
 
                   <div className='DeleteAndPrice'>
-                    <i class="fa-solid fa-trash" onClick={deleteItem}></i>
-                    <p> $ {item.price}.00</p>
+                    <i class="fa-solid fa-trash" onClick={() => deleteItem(item.id)}></i>
+                    <p> $ {item.price * item.quantity}.00</p>
                   </div>
 
                 </div>
@@ -93,7 +156,7 @@ function Checkout() {
             </div>
 
             <div>
-              <p>$300.00</p>
+              <p>${totalPrice}</p>
               <p>Calculated At Checkout</p>
             </div>
           </div>
@@ -106,7 +169,7 @@ function Checkout() {
             </div>
 
             <div>
-              <p>$300.00</p>
+              <p>${totalPrice}</p>
 
             </div>
 
@@ -115,23 +178,23 @@ function Checkout() {
             4 interest-free payment of $98.50 with  <strong> klarna</strong>
           </h3>
           <p className='learn_more'>Learn More</p>
-         <hr className='hrtag'/>
-           <div className='promoCode'>
-            <input type="text" />
-            <button>APPLY </button>
-           </div>
+          <hr className='hrtag' />
+          <div className='promoCode'>
+            <input type="text" placeholder='Apply Coupon (masai30)' value={input} onChange={handleChange} />
+            <button onClick={()=>Couponhandle(input)}>APPLY </button>
+          </div>
 
 
           <div className='btn-checkout'>
-            <button className='Continue_btn'>CONTINUE SHOPPING </button> <br />
-            <button className='Secure_btn'>SECURE CHECKOUT</button>
-            <img src={WeAccept} alt="We Accept" srcset="" />
+            <button className='Continue_btn' onClick={ContinueShopping}>CONTINUE SHOPPING </button> <br />
+            <button className='Secure_btn' onClick={SecurePayment}>SECURE CHECKOUT</button>
+            <img src={WeAccept} alt="We Accept" />
           </div>
         </div>
 
 
       </div>
-
+      <SingleProducts />
     </>
   )
 }
