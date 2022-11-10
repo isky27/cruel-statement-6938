@@ -2,7 +2,7 @@
 import { Center, Text } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from './CartContextProvider';
-import "./Checkout.css"
+import "./cart.css"
 
 import IncDec from './IncDec';
 import SingleProducts from './SingleProducts';
