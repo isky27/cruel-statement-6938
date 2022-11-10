@@ -1,12 +1,14 @@
 import './App.css';
-import Checkout from './Checkout/Checkout';
-
+import Checkout from './Cart/Checkout';
+import {Routes,Route} from "react-router-dom"
 
 
 function App() {
   return (
   <>
-    <Checkout />
+   <Routes>
+    <Route path="/cart" element={ <Checkout />}></Route>
+   </Routes>
   
   
   </>
