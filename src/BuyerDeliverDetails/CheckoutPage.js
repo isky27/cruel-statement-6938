@@ -10,8 +10,11 @@ function CheckoutPage() {
     <div className='logo'>
      <img src={logo} alt="Skin And Care"  />
     </div>
-   
-   
+    
+      <div className="mainContainer">
+        <div className='LeftSide'></div>
+        <div className='RightSide'></div>
+      </div>
       
     </>
   )

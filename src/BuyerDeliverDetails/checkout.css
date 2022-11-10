@@ -1,0 +1,14 @@
+.logo{
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid black;
+}
+.logo>img{
+    width: 25%;
+    height: 65px;
+    margin: auto;
+}
+.mainContainer{
+    width: 95%;
+    
+}
