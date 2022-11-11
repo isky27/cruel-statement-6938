@@ -145,4 +145,3 @@ function CheckoutPage() {
 
 export default CheckoutPage
 
-// git push origin fp04_371_Day_3
