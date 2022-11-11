@@ -116,19 +116,115 @@
     display: flex;
     width: 100%;
     height: 18vh;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
 }
-.MainItemDiv>div:first-child{
+
+.MainItemDiv>div:first-child {
     width: 30%;
     /* border: 1px solid red; */
     margin: 5px;
 }
-.MainItemDiv>div:first-child>img{
+
+.MainItemDiv>div:first-child>img {
     width: 90%;
     height: 15vh;
     /* border: 1px solid black; */
 }
-.MainItemDiv>div:nth-child(2){
+
+.MainItemDiv>div:nth-child(2) {
     width: 50%;
+    margin-top: 15px;
     /* border: 1px solid black; */
+}
+
+.MainItemDiv>div:nth-child(2)>p:nth-child(2) {
+    margin-top: 15px;
+    /* background-color: red; */
+}
+
+.MainItemDiv>div:last-child {
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.SubTotal {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    border-bottom: 1px solid black;
+
+}
+
+.SubTotal>div:first-child {
+    margin-left: 20px;
+}
+
+.SubTotal>div:first-child>h1 {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.SubTotal>div:last-child {
+    margin-right: 40px;
+}
+
+.SubTotal>div:last-child>h1 {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.SubTotal>div:last-child>h1:nth-child(1) {
+    font-size: 18px;
+    font-weight: 560;
+}
+
+.SubTotal>div:last-child>h1:nth-child(2) {
+    margin-left: 60px;
+}
+
+.SubTotal>div:last-child>h1:nth-child(3) {
+    margin-left: 60px;
+}
+
+.TotalItemandPrice{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    
+}
+
+.TotalItemandPrice>div:first-child {
+    margin-left: 20px;
+}
+
+.TotalItemandPrice>div:first-child>h1 {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+.TotalItemandPrice>div:first-child>h1>span {
+   font-weight: 700;
+   font-size: 19px;
+}
+
+
+.TotalItemandPrice>div:last-child {
+    margin-right: 40px;
+}
+
+.TotalItemandPrice>div:last-child>h1 {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.TotalItemandPrice>div:last-child>h1:nth-child(1) {
+    font-size: 18px;
+    font-weight: 560;
 }
