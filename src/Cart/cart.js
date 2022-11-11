@@ -14,7 +14,7 @@ function Checkout() {
 
   const { cartdata, setcartdata } = useContext(CartContext)
 
-  console.log(cartdata)
+  // console.log(cartdata)
 
 
   const [totalPrice, setTotalPrice] = useState(1)
@@ -49,7 +49,7 @@ function Checkout() {
     handlePrice();
   });
 
-  console.log(totalPrice)
+  // console.log(totalPrice)
 
   const handleChange = (e) => {
     setInput(e.target.value)

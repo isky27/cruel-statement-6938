@@ -7,7 +7,7 @@ function SingleProducts() {
 
     const {AddtoCart}=useContext(CartContext)
 
-    console.log(AddtoCart)
+    // console.log(AddtoCart)
 
 
   return (
@@ -17,7 +17,7 @@ function SingleProducts() {
             <div key={el.id}>
                 <img src={el.image} alt={el.title} srcset="" />
                 <p>{el.title}</p>
-                <button onClick={()=>AddtoCart(el)} >Add To Cart</button>
+                <button onClick={()=>AddtoCart(el,el.title)} >Add To Cart</button>
              </div>
         ))
       }

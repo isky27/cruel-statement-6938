@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function IncDec({ quantityModify, id }) {
     const [count, setCount] = useState(1);
-    console.log(quantityModify,id)
+    // console.log(quantityModify,id)
 
 
     return (
