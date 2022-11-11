@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 
 function IncDec({ quantityModify, id }) {
-    const [count, setCount] = useState(1);
-    console.log(quantityModify,id)
 
+
+   
+    const [count, setCount] = useState(1);
+    
+  
+   
+      
 
     return (
         <>

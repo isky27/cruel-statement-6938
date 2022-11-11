@@ -9,13 +9,13 @@ import SingleProducts from './SingleProducts';
 
 
 import WeAccept from "./we.png"
+import { useNavigate } from 'react-router-dom';
 
 function Cart() {
 
   const { cartdata, setcartdata } = useContext(CartContext)
 
-  console.log(cartdata)
-
+  const navigate=useNavigate()
 
 let [totalPrice, setTotalPrice] = useState(1)
 
@@ -74,7 +74,7 @@ let [totalPrice, setTotalPrice] = useState(1)
 
 
   const SecurePayment = () => {
-    alert("Secure payment")
+    navigate("/checkout")
   }
 
 

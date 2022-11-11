@@ -15,7 +15,7 @@ function SingleProducts() {
         DemoData.map((el)=>(
             <div key={el.id}>
                 <img src={el.image} alt={el.title} srcset="" />
-                <p>{el.title}</p>
+                <p>{el.title} and {el.price}</p>
                 <button onClick={()=>AddtoCart(el)} >Add To Cart</button>
              </div>
         ))

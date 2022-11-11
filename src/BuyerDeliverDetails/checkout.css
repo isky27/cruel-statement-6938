@@ -27,11 +27,14 @@
 
 .mainContainer>div:last-child {
     width: 40%;
-
     border: 1px solid grey;
     border-radius: 5px;
 
 }
+
+/* .mainContainer>div:last-child>div:first-child{
+    background-color: rebeccapurple;
+} */
 
 .top {
     display: flex;
@@ -42,7 +45,11 @@
 
 .top>h1:last-child {
     margin-left: 70%;
+    border-bottom: 1px solid black;
+    cursor: pointer;
 }
+
+
 
 .Contact {
     font-size: 25px;
