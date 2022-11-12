@@ -5,4 +5,28 @@
     gap: 20px;
     margin-left: 30px;
 
+
+  }
+  .seller {
+    height: 14rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+    border: 1px solid  #efefef;
+    background-color: #efefef
+  }
+
+  .font {
+    font-size: 34px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top: 3rem;
+    margin-left: 6rem;
+    color: #4f4f4f;
+  }
+
+  .shopp {
+    margin-left: 6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #4f4f4f;
+    font-size: 17px;
   }

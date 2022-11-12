@@ -11,9 +11,16 @@ function Product() {
   const btnRef = useRef()
 
   return (
+ <>
+ <div className="seller" >
+<div className="font" >Best Sellers </div>
+<p className="shopp" >Shop bestselling products including derm-designed skin + hair Regimens, </p>
+<p className="shopp" >face serums, hair styling treatments and more.</p>
+ </div>
+
     <Box className="container"  >
       {data.products.map((e) => (
-        <Box
+        <Box 
           border="0px"
           maxW="sm"
           borderWidth="1px"
@@ -97,6 +104,7 @@ function Product() {
         </Box>
       ))}
     </Box>
+ </>
   );
 }
 export default Product;
