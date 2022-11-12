@@ -32,9 +32,7 @@
 
 }
 
-/* .mainContainer>div:last-child>div:first-child{
-    background-color: rebeccapurple;
-} */
+
 
 .top {
     display: flex;
@@ -72,7 +70,7 @@
 }
 
 .input {
-    width: 95%;
+    width: 99%;
     padding: 10px;
     border: 1px solid black;
     margin: 10px;
@@ -115,9 +113,136 @@
     letter-spacing: 1px;
 }
 
-.shippingPayment {
+.shippingPaymentAndaccount {
     margin-top: 50px;
+    /* border: 2px solid red; */
 }
+
+.shippingPaymentAndaccount>div:first-child>h1 {
+    border-bottom: 1px solid black;
+}
+
+
+.firstNameAndlastName>div {
+    display: flex;
+}
+
+
+.firstname {
+    width: 50%;
+    /* border: 1px solid black; */
+}
+
+.firstname>input {
+    width: 98%;
+}
+
+.lastname {
+    width: 50%;
+    /* border: 1px solid yellow; */
+}
+
+.lastname>input {
+    width: 98%;
+}
+
+
+
+.label {
+    font-size: 17px;
+    margin-left: 5px;
+    color: rgb(161, 144, 161);
+    font-weight: 500;
+    padding: 5px;
+}
+
+
+.name {
+
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+.Address {
+    font-size: 17px;
+    margin-left: 15px;
+    color: rgb(189, 182, 189);
+    font-weight: 500;
+    padding: 5px;
+}
+
+.AddressInput {
+    width: 99%;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+
+.citystatezip>div {
+    display: flex;
+}
+
+
+.city {
+    width: 80%;
+    /* border: 1px solid yellow; */
+}
+
+.city>input {
+    width: 95%;
+}
+
+.state {
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid rgb(14, 41, 41);
+    height: 46px;
+    margin-top: 46px;
+    margin-left: 5px;
+}
+
+.zipcode {
+    width: 30%;
+}
+
+
+
+
+
+.label {
+    font-size: 17px;
+    margin-left: 5px;
+    color: rgb(161, 144, 161);
+    font-weight: 500;
+    padding: 5px;
+}
+
+.SaveAndContinue {
+    width: 100%;
+    /* border: 1px solid blueviolet; */
+}
+
+.SaveAndContinue>button {
+    outline: 0;
+    border: 0;
+    width: 99%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 7px 7px 7px 0px;
+    background-color: rgb(142, 240, 240);
+    margin-left: 10px;
+    color: darkslategray;
+
+}
+
 
 .MainItemDiv {
     display: flex;
@@ -197,11 +322,11 @@
     margin-left: 60px;
 }
 
-.TotalItemandPrice{
+.TotalItemandPrice {
     display: flex;
     justify-content: space-between;
     margin: 20px 0px;
-    
+
 }
 
 .TotalItemandPrice>div:first-child {
@@ -214,9 +339,10 @@
     font-weight: 400;
     font-family: sans-serif;
 }
+
 .TotalItemandPrice>div:first-child>h1>span {
-   font-weight: 700;
-   font-size: 19px;
+    font-weight: 700;
+    font-size: 19px;
 }
 
 
@@ -234,4 +360,189 @@
 .TotalItemandPrice>div:last-child>h1:nth-child(1) {
     font-size: 18px;
     font-weight: 560;
+}
+
+.insideDiv {
+    /* border: 2px solid gold; */
+    height: 83vh;
+    width: 97%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.insideDiv>div {
+    border: 2px solid black;
+    height: 60px;
+    cursor: pointer;
+}
+
+.insideDiv>div:first-child {
+    height: 80vh;
+    margin-bottom: 10px;
+}
+
+.CreditUsing>div:first-child {
+    height: 60px;
+    background-color: rgb(250, 243, 243);
+
+
+}
+
+.CreditUsing>div:first-child>input {
+    height: 22px;
+    width: 22px;
+    margin-top: 13px;
+    margin-left: 20px;
+
+
+}
+
+.CreditUsing>div:first-child>label {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+
+}
+
+
+
+.CreditUsing>div:nth-child(2) {
+    margin-top: 20px;
+}
+
+.namecard {
+    font-size: 17px;
+    margin-left: 15px;
+    color: rgb(212, 206, 212);
+    font-weight: 500;
+    padding: 5px;
+}
+
+.nameInput {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.expiration>div {
+    display: flex;
+}
+
+.expire {
+    width: 20%;
+    margin-top: 45px;
+    border-radius: 5px;
+    border: 1px solid rgb(14, 41, 41);
+    height: 46px;
+    margin-left: 10px;
+}
+
+
+
+.year{
+    width: 45%;
+    border-radius: 5px;
+    border: 1px solid rgb(14, 41, 41);
+    height: 46px;
+    margin-top: 46px;
+    margin-left: 5px;
+}
+
+.cvv {
+    width: 25%;
+}
+
+.billingAdressas{
+    /* border: 2px solid black; */
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.billingAdressas>input{
+    height: 22px;
+    width: 22px;
+    margin-top: 20px;
+ 
+}
+.billinghead{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px; 
+    margin-top: 10px;
+}
+
+.billingAdressas>label{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px; 
+    margin-top: -10px;
+}
+
+.billingAdressas>h1{
+    margin-left: 40px;
+    font-size: 20px;
+
+    letter-spacing: 1px; 
+}
+
+
+.saveandcontinue {
+    width: 100%;
+    /* border: 1px solid blueviolet; */
+}
+
+.saveandcontinue>button {
+    outline: 0;
+    border: 0;
+    width: 99%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 7px 7px 7px 0px;
+    background-color: rgb(142, 240, 240);
+    margin-left:3px;
+    color: darkslategray;
+
+}
+
+.insideDiv>div:first-child>label>i {
+    margin: 7px;
+}
+
+
+.insideDiv>div:nth-child(2)>input {
+    height: 22px;
+    width: 22px;
+    margin-top: 13px;
+    margin-left: 20px;
+}
+
+.insideDiv>div:nth-child(2)>label {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+}
+
+
+.insideDiv>div:nth-child(3)>input {
+    height: 22px;
+    width: 22px;
+    margin-top: 13px;
+    margin-left: 20px;
+}
+
+.insideDiv>div:nth-child(3)>label {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
 }

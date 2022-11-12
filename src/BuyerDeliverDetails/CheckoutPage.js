@@ -1,4 +1,5 @@
 
+import { Select } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,6 +15,9 @@ function CheckoutPage() {
 
   let [totalPrice, setTotalPrice] = useState(1)
   //  console.log(LocalStorageCartData)
+
+
+
 
   const [state, setState] = useState(true)
   const [enterGmail, setEnterGmail] = useState([])
@@ -53,7 +57,13 @@ function CheckoutPage() {
     setEnterGmail(value.target.value)
   }
 
+  const formdatahandle = () => {
+    setState(true)
+  }
 
+   const finsihed=()=>{
+    alert("loo")
+   }
 
   return (
     <>
@@ -77,15 +87,212 @@ function CheckoutPage() {
             <button className='account' onClick={handleAccount} >CREATE ACCOUNT</button>
           </div>
 
-          <div className='shippingPayment'>
-            <div>
-              <h1 className='Contact'>Shipping
-               {state? "": <p> Hello</p>}
-              </h1>
+          <div className='shippingPaymentAndaccount'>
+
+
+            <div className='ShippingDetails'>
+              <h1 className='Contact'>Shipping </h1>
+
+              {
+                state ? null :
+                  <>
+                    <div className='firstNameAndlastName'>
+                      <div>
+                        <div className='firstname'>
+                          <h1 className='label'>First Name</h1>
+                          <input type="text"
+                            className='name'
+
+                            placeholder='First Name'>
+
+                          </input>
+
+                        </div>
+                        <div className='lastname'>
+                          <h1 className='label'>Last Name</h1>
+                          <input type="text"
+
+                            placeholder='Last Name'
+                            className='name'>
+
+                          </input>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div className='address12'>
+
+                      <label className='Address'>Address 1</label> <br />
+                      <input type="text" placeholder='Address 1'
+                        className='AddressInput'
+                      />
+
+                      <label className='Address'>Address 2</label> <br />
+                      <input type="text" placeholder='Address 2'
+                        className='AddressInput'
+                      />
+                    </div>
+
+                    <div className='citystatezip'>
+
+                      <div>
+                        <div className='city'>
+                          <h1 className='label'>City</h1>
+                          <input type="text"
+                            className='name'
+
+                            placeholder='City'>
+
+                          </input>
+
+                        </div>
+                        <div className='state'>
+
+                          <Select >
+                            <option value='Assam'></option>
+                            <option value='Assam'>Assam</option>
+                            <option value='Kolkata'>Kolkata</option>
+                            <option value='Delhi'>Delhi</option>
+                            <option value='Gujrat'>Gujrat</option>
+                            <option value='Kerela'>Kerela</option>
+                          </Select>
+
+                        </div>
+                        <div className='zipcode'>
+                          <h1 className='label'>Zip Code</h1>
+                          <input type="number"
+
+                            placeholder='Zip Code'
+                            className='name'>
+
+                          </input>
+                        </div>
+
+
+                      </div>
+
+
+                    </div>
+
+                    <div className='phoneNumber'>
+
+                      <label className='Address'>Phone Number</label> <br />
+                      <input type="number" placeholder='Phone number'
+                        className='AddressInput'
+                      />
+                    </div>
+                    <div className='SaveAndContinue'>
+                      <button className='saveandcontinuebtn' onClick={formdatahandle}>SAVE & CONTINUE</button>
+                    </div>
+                  </>
+              }
+
             </div>
-            <div>
-              <h1 className='Contact'>Shipping</h1>
+
+            <div className='AccountDetails'>
+              <div>
+                <h1 className='Contact'>Payments</h1>
+              </div>
+
+              <div className='insideDiv'>
+
+                <div className='CreditUsing'>
+
+                  <div className='CreditCardTop' >
+                    <input type="radio" className='creditecircle' />
+                    <label>
+                      <i class="fa-regular fa-credit-card"></i>
+                      Credit Card </label>
+
+
+                  </div>
+
+                  <div className='NameOntheCard'>
+                    <label className='namecard'>Name on the card</label> <br />
+                    <input type="text" 
+                      className='nameInput'/>
+                  </div>
+
+                  <div className='cardnumber'>
+                  <label className='namecard'>Card Number</label> <br />
+                    <input type="text" 
+                      className='nameInput' />
+                      
+                  </div>
+
+                  <div className='expiration'>
+                  <div>
+                
+                    <div className='expire'> 
+                        <Select >
+                            <option value='Expiration'>Expiration</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                          </Select>
+
+
+                        </div>
+                        <div className='year'>
+
+                          <Select >
+                            <option value=''> Year</option>
+                            <option value='2022'>2022</option>
+                            <option value='2023'>2023</option>
+                            <option value='2025'>2025</option>
+                            <option value='2026'>2026</option>
+                            <option value='2027'>2027</option>
+                          </Select>
+
+                        </div>
+                        <div className='cvv'>
+                          <h1 className='label'>CVV</h1>
+                          <input type="number"
+                            className='name'>
+
+                          </input>
+                        </div>
+
+
+                      </div>
+                  </div>
+                  <h1 className='billinghead'>Billing Address</h1>
+                  <div className='billingAdressas'>
+                
+                  <input type="radio" className='creditecircle' />
+                    <label> Same as Shipping Address </label>
+                    <h1> Full name city zipcode</h1>
+                  </div>
+
+                  <div className='saveandcontinue'>
+                  <button className='saveandcontinuebtn' onClick={finsihed}>SAVE & CONTINUE</button>
+                  </div>
+                </div>
+
+
+                <div className='PaypalUsing'>
+
+                  <input type="radio" />
+                  <label >Paypal</label>
+
+                </div>
+
+                <div className='KlarnaUsing'>
+
+                  <input type="radio" />
+                  <label >Klarna</label>
+
+                </div>
+
+
+
+              </div>
             </div>
+
+
           </div>
         </div>
 
