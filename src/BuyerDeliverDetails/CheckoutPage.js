@@ -10,17 +10,23 @@ import "./checkout.css";
 
 const LocalStorageCartData = JSON.parse(localStorage.getItem("cartData")) || []
 
-
+const initialtState={
+  firstName:"",
+  lastName:"",
+  zipcode:"",
+  city:""
+}
 function CheckoutPage() {
 
   let [totalPrice, setTotalPrice] = useState(1)
   //  console.log(LocalStorageCartData)
 
+  const [DeliverDetails,setDeliverDetails]= useState(initialtState)
 
+  const [formData,setFormdat]= useState([])
 
-
-  const [state, setState] = useState(true)
   const [enterGmail, setEnterGmail] = useState([])
+   
 
   const navigate = useNavigate()
 
@@ -40,13 +46,11 @@ function CheckoutPage() {
   }
 
   const handleGuset = () => {
-    let Enter = enterGmail.includes("@");
+ setEnterGmail(enterGmail)
 
-    if (Enter) {
-      alert("Please Enter Valid Email")
-    } else {
-      setState(false)
-    }
+setEnterGmail("")
+
+    
   }
 
   const handleAccount = () => {
@@ -57,13 +61,34 @@ function CheckoutPage() {
     setEnterGmail(value.target.value)
   }
 
-  const formdatahandle = () => {
-    setState(true)
-  }
-
-   const finsihed=()=>{
+  
+  const finsihed = () => {
     alert("loo")
-   }
+  }
+ 
+
+const handleChange = (e) => {
+  const { name, value } = e.target;
+
+ setDeliverDetails({
+    ...formData,
+    [name]: value,
+   
+  });
+};
+
+// When Click 
+
+const DeliverDetailshandle=()=>{
+ setFormdat([...DeliverDetails,formData]);
+  
+
+
+}
+console.log(formData)
+
+ const {firstName,lastName,zipcode,city}= DeliverDetails;
+
 
   return (
     <>
@@ -79,11 +104,11 @@ function CheckoutPage() {
           <label className='email'>Email</label> <br />
           <input type="text" placeholder='Enter email'
             className='input'
-            required onChange={handleGmail}
+           onChange={handleGmail}
             value={enterGmail} />
 
           <div className='createOrGuset'>
-            <button className='guest' onClick={() => handleGuset(enterGmail)}>CHECKOUT AS GUEST</button>
+            <button className='guest' onClick={handleGuset}>CHECKOUT AS GUEST</button>
             <button className='account' onClick={handleAccount} >CREATE ACCOUNT</button>
           </div>
 
@@ -93,16 +118,16 @@ function CheckoutPage() {
             <div className='ShippingDetails'>
               <h1 className='Contact'>Shipping </h1>
 
-              {
-                state ? null :
-                  <>
+
                     <div className='firstNameAndlastName'>
                       <div>
                         <div className='firstname'>
                           <h1 className='label'>First Name</h1>
                           <input type="text"
                             className='name'
-
+                            value={firstName}
+                            onChange={handleChange}
+                            name="firstname"
                             placeholder='First Name'>
 
                           </input>
@@ -111,7 +136,9 @@ function CheckoutPage() {
                         <div className='lastname'>
                           <h1 className='label'>Last Name</h1>
                           <input type="text"
-
+                           value={lastName}
+                           name="lastname"
+                           onChange={handleChange}
                             placeholder='Last Name'
                             className='name'>
 
@@ -141,7 +168,9 @@ function CheckoutPage() {
                           <h1 className='label'>City</h1>
                           <input type="text"
                             className='name'
-
+                            name="city"
+                            value={city}
+                            onChange={handleChange}
                             placeholder='City'>
 
                           </input>
@@ -162,8 +191,10 @@ function CheckoutPage() {
                         <div className='zipcode'>
                           <h1 className='label'>Zip Code</h1>
                           <input type="number"
-
+                            value={zipcode}
+                            onChange={handleChange}
                             placeholder='Zip Code'
+                            name="zipcode"
                             className='name'>
 
                           </input>
@@ -183,10 +214,10 @@ function CheckoutPage() {
                       />
                     </div>
                     <div className='SaveAndContinue'>
-                      <button className='saveandcontinuebtn' onClick={formdatahandle}>SAVE & CONTINUE</button>
+                      <button className='saveandcontinuebtn' onClick={DeliverDetailshandle}>SAVE & CONTINUE</button>
                     </div>
-                  </>
-              }
+       
+           
 
             </div>
 
@@ -198,78 +229,80 @@ function CheckoutPage() {
               <div className='insideDiv'>
 
                 <div className='CreditUsing'>
-
-                  <div className='CreditCardTop' >
-                    <input type="radio" className='creditecircle' />
-                    <label>
-                      <i class="fa-regular fa-credit-card"></i>
-                      Credit Card </label>
-
-
-                  </div>
-
-                  <div className='NameOntheCard'>
-                    <label className='namecard'>Name on the card</label> <br />
-                    <input type="text" 
-                      className='nameInput'/>
-                  </div>
-
-                  <div className='cardnumber'>
-                  <label className='namecard'>Card Number</label> <br />
-                    <input type="text" 
-                      className='nameInput' />
-                      
-                  </div>
-
-                  <div className='expiration'>
-                  <div>
-                
-                    <div className='expire'> 
-                        <Select >
-                            <option value='Expiration'>Expiration</option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>
-                            <option value='4'>4</option>
-                            <option value='5'>5</option>
-                          </Select>
+              
+                        <div className='CreditCardTop' >
+                          <input type="radio" className='creditecircle' />
+                          <label>
+                            <i class="fa-regular fa-credit-card"></i>
+                            Credit Card </label>
 
 
                         </div>
-                        <div className='year'>
-
-                          <Select >
-                            <option value=''> Year</option>
-                            <option value='2022'>2022</option>
-                            <option value='2023'>2023</option>
-                            <option value='2025'>2025</option>
-                            <option value='2026'>2026</option>
-                            <option value='2027'>2027</option>
-                          </Select>
-
-                        </div>
-                        <div className='cvv'>
-                          <h1 className='label'>CVV</h1>
-                          <input type="number"
-                            className='name'>
-
-                          </input>
+                       
+                        <div className='NameOntheCard'>
+                          <label className='namecard'>Name on the card</label> <br />
+                          <input type="text"
+                            className='nameInput' />
                         </div>
 
+                        <div className='cardnumber'>
+                          <label className='namecard'>Card Number</label> <br />
+                          <input type="text"
+                            className='nameInput' />
 
-                      </div>
-                  </div>
-                  <h1 className='billinghead'>Billing Address</h1>
-                  <div className='billingAdressas'>
-                
-                  <input type="radio" className='creditecircle' />
-                    <label> Same as Shipping Address </label>
-                    <h1> Full name city zipcode</h1>
-                  </div>
+                        </div>
 
-                  <div className='saveandcontinue'>
-                  <button className='saveandcontinuebtn' onClick={finsihed}>SAVE & CONTINUE</button>
-                  </div>
+                        <div className='expiration'>
+                          <div>
+
+                            <div className='expire'>
+                              <Select >
+                                <option value='Expiration'>Expiration</option>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                              </Select>
+
+
+                            </div>
+                            <div className='year'>
+
+                              <Select >
+                                <option value=''> Year</option>
+                                <option value='2022'>2022</option>
+                                <option value='2023'>2023</option>
+                                <option value='2025'>2025</option>
+                                <option value='2026'>2026</option>
+                                <option value='2027'>2027</option>
+                              </Select>
+
+                            </div>
+                            <div className='cvv'>
+                              <h1 className='label'>CVV</h1>
+                              <input type="number"
+                                className='name'>
+
+                              </input>
+                            </div>
+
+
+                          </div>
+                        </div>
+                        <h1 className='billinghead'>Billing Address</h1>
+                        <div className='billingAdressas'>
+
+                          <input type="radio" className='creditecircle' />
+                          <label> Same as Shipping Address </label>
+                          <h1> Full name city zipcode</h1>
+                        </div>
+
+                        <div className='saveandcontinue'>
+                          <button className='saveandcontinuebtn' onClick={finsihed}>SAVE & CONTINUE</button>
+                        </div>
+                  
+
                 </div>
 
 

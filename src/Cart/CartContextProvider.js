@@ -7,6 +7,8 @@ function CartContextProvider({children}) {
   const LocalStorageCartData=JSON.parse(localStorage.getItem("cartData"))||[]
 
     const [cartdata,setcartdata]= useState(LocalStorageCartData);
+
+
   
   function AddtoCart (product,title)
     {
@@ -17,6 +19,8 @@ function CartContextProvider({children}) {
       
       // localStorage.setItem("cartData",JSON.stringify(product))
     }
+
+
     
   
     useEffect(()=>{
@@ -27,7 +31,7 @@ function CartContextProvider({children}) {
   
 
 
-    console.log(LocalStorageCartData);
+    // console.log(LocalStorageCartData);
 
   return (
     <CartContext.Provider value={{cartdata,AddtoCart,setcartdata}} >
