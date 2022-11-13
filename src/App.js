@@ -1,14 +1,17 @@
-import './App.css';
-import Admin_Router from './components/admin/Admin_Home';
+import AllRoutes from "./Components/AllRoutes";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import "./index.css";
+import { AuthProvider } from "./utilis/Auth";
 
 function App() {
   return (
-    <div>
-    Hiii
-    Hiii-3
-    Hiii-4
-    -axios installed
-    <Admin_Router/>
+    <div className="App">
+      <AuthProvider>
+        <Navbar />
+        <AllRoutes />
+        <Footer />
+      </AuthProvider>
     </div>
   );
 }

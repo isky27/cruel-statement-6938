@@ -1,0 +1,17 @@
+try {
+    if (!name || !description || !image_url || !rating || !price || !quantity) {
+     return res.status(404).send("Please Fill All the details");
+    } else {
+      let product_cr = await Product.create({
+        name,
+        description,
+        image_url,
+        rating,
+        price,
+        quantity,
+      });
+      return res.status(200).send(product_cr);
+    }
+  } catch (error) {
+    res.send({ status: "Error" });
+  }
