@@ -14,8 +14,10 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import logo from "../../../asset/skin-and-care-logo.jpeg";
 
 const Links = ["Users", "Products", "Orders"];
 
@@ -28,7 +30,7 @@ const NavLink = ({children}) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
+    href={`/${children}`}
   >
     {children}
   </Link>
@@ -49,7 +51,11 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
+            <Link href="/">
+              <Box>
+                <Image w={"130px"} m={"auto"} src={logo} alt="Skin And Care" />
+              </Box>
+            </Link>
             <HStack
               as={"nav"}
               spacing={4}
@@ -96,8 +102,6 @@ export default function Simple() {
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }

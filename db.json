@@ -1,28 +1,45 @@
 {
-    "users":[
-        {
-            "id":"1",
-            "name":"Gagan",
-            "email":"gagan@gmail.com",
-            "password":"123456"
-        },
-        {
-            "id": "2",
-            "name": "Vinay",
-            "email": "vinay@gmail.com",
-            "password": "123456"
-        },
-        {
-            "id": "3",
-            "name": "Dhiraj",
-            "email": "dhiraj@gmail.com",
-            "password": "123456"
-        },
-        {
-            "id": "4",
-            "name": "Anchal",
-            "email": "anchal@gmail.com",
-            "password": "123456"
-        }
-    ]
+  "users": [
+    {
+      "email": "vinay@gamil.com",
+      "password": "vinay@123",
+      "id": 1668093365606,
+      "name": "Vinay"
+    },
+    {
+      "name": "Gagan Jindal",
+      "email": "eve.holt@reqres.in",
+      "password": "hgbytghvrht",
+      "id": 1668103474782
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 1668139559627
+    }
+  ],
+  "products": [
+    {
+      "id": 1668097443194,
+      "image_url": "https://www.rodanandfields.com/en-us/medias/AAEY015-458x458.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ2OHxpbWFnZS9qcGVnfGltYWdlcy9oMDYvaDljLzEzOTc3NTQ0NDI1NTAyLmpwZ3xiNzQ3NjJkOWU1Y2QxOWM5ZDQ4ZGQzZDA1ZjdkNzBhZmRhMjdkYzE5MTU0MWZiZjY5MDc3NzEyMjBkM2E1YThj",
+      "name": "REDEFINE Multi-Function Eye Cream",
+      "description": "Younger-looking eyes in a wink! Our intensive anti-aging eye cream visibly firms + lifts to improve the look of fine lines, wrinkles, sagging + crow’s feet.",
+      "price": "70"
+    },
+    {
+      "id": 1668097489182,
+      "image_url": "https://www.rodanandfields.com/en-us/medias/AAEY015-458x458.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ2OHxpbWFnZS9qcGVnfGltYWdlcy9oMDYvaDljLzEzOTc3NTQ0NDI1NTAyLmpwZ3xiNzQ3NjJkOWU1Y2QxOWM5ZDQ4ZGQzZDA1ZjdkNzBhZmRhMjdkYzE5MTU0MWZiZjY5MDc3NzEyMjBkM2E1YThj",
+      "name": "REDEFINE Multi-Function Eye Cream",
+      "description": "Younger-looking eyes in a wink! Our intensive anti-aging eye cream visibly firms + lifts to improve the look of fine lines, wrinkles, sagging + crow’s feet.",
+      "price": "86"
+    },
+    {
+      "id": 1668139587175,
+      "image_url": "https://www.rodanandfields.com/en-us/medias/AAEY015-458x458.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ2OHxpbWFnZS9qcGVnfGltYWdlcy9oMDYvaDljLzEzOTc3NTQ0NDI1NTAyLmpwZ3xiNzQ3NjJkOWU1Y2QxOWM5ZDQ4ZGQzZDA1ZjdkNzBhZmRhMjdkYzE5MTU0MWZiZjY5MDc3NzEyMjBkM2E1YThj",
+      "name": "",
+      "description": "",
+      "price": 0
+    }
+  ]
 }
