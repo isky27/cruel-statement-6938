@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SignupCard() {
   const [fname, Setfname] = useState("");
@@ -24,7 +24,9 @@ export default function SignupCard() {
   const [email, Setemail] = useState("");
   const [password, Setpassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirectPath = location.state?.path || "/login";
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ fname, lname, email, password });
@@ -46,7 +48,8 @@ export default function SignupCard() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        window.location.href = "./login";
+        // window.location.href = "./login";
+        navigate(redirectPath, { replace: true });
       });
   };
 
